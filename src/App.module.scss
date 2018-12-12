@@ -1,0 +1,24 @@
+body {
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  .Main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .Container {
+      width: 300px;
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      h2 {
+        text-align: center;
+      }
+      border-top: 4px solid #1565c0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      background: white;
+      .Data {
+        margin: 15px;
+      }
+    }
+  }
+}
