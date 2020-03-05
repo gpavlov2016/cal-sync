@@ -1,5 +1,8 @@
 # create-react-app with PostgreSQL intergration
 
+This repo was created to show how to connect a Postgres database with react, do not use in production. 
+It's currently unmaintained so make sure you update the dependencies before using.
+
  ### Get started
 - Fork or [Download](https://github.com/Malldoror/react-postgres-boilerplate/archive/master.zip) the repo
  ### Install dependencies
