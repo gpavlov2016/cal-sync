@@ -3,21 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "coffee-script": "^1.12.7",
-    "coffeescript": "^2.5.1",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "gapi": "0.0.3",
-    "gapi-script": "^1.0.2",
     "googleapis": "^66.0.0",
     "moment": "^2.29.1",
     "pg": "^7.7.1",
-    "query-string": "^6.13.7",
-    "react": "^16.6.3",
-    "react-big-calendar": "^0.30.0",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "query-string": "^6.13.7"
   },
   "scripts": {
     "start": "node api.js"
@@ -26,11 +18,5 @@
     "extends": [
       "plugin:prettier/recommended"
     ]
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }
