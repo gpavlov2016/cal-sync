@@ -24,11 +24,12 @@ const config = {
   host: process.env.PG_HOST
 };
 
-// const baseUrl = 'http://localhost:8080';
+// const serverUrl = 'http://localhost:8080';
 const serverUrl = process.env.server_url;
 const redirect_uri =  serverUrl + '/oauth2callback';
 const client_secret =  process.env.client_secret;
 const client_id =  process.env.client_id;
+const frontendUrl = process.env.frontend_url;
 
 //Documentation for node-postgres: https://node-postgres.com/
 const pool = new pg.Pool(config);
@@ -65,7 +66,7 @@ app.get("/oauth2callback", (req, res) => {
               console.log(err);
           } else {
               await addUser(me.data.email, token)
-              res.redirect(`http://localhost:3000?email=${me.data.email}`);
+              res.redirect(`${frontendUrl}?email=${me.data.email}`);
           }
       });
   });
@@ -95,14 +96,14 @@ app.get("/events", async (req, res) => {
   res.send(events);
 });
 
-app.get("/authUrl", async (req, res) => {
-  const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uri);
-  const authUrl = oAuth2Client.generateAuthUrl({
-    access_type: 'offline',
-    scope: SCOPES,
-  });
-  res.send({authUrl});
-});
+// app.get("/authUrl", async (req, res) => {
+//   const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uri);
+//   const authUrl = oAuth2Client.generateAuthUrl({
+//     access_type: 'offline',
+//     scope: SCOPES,
+//   });
+//   res.send({authUrl});
+// });
 
 
 async function getEvents(email) {
