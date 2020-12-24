@@ -25,10 +25,10 @@ const config = {
 };
 
 // const baseUrl = 'http://localhost:8080';
-const baseUrl = 'http://calsync-env.eba-wsszxvch.us-east-1.elasticbeanstalk.com:8080';
-const redirect_uri =  baseUrl + '/oauth2callback';
-const client_secret = 'jSMiSaVU4Dv4b9rxOBmRpyEW';
-const client_id = '809758834696-bnm6pb62roqcv967j2s68t9qrbloindl.apps.googleusercontent.com';
+const serverUrl = process.env.server_url;
+const redirect_uri =  serverUrl + '/oauth2callback';
+const client_secret =  process.env.client_secret;
+const client_id =  process.env.client_id;
 
 //Documentation for node-postgres: https://node-postgres.com/
 const pool = new pg.Pool(config);
@@ -227,5 +227,5 @@ async function updateNextSyncToken(email, nextSyncToken) {
 
 //Server
 app.listen(8080, function () {
-  console.log("API listening on http://localhost:8080");
+  console.log("API listening on port 8080");
 });
